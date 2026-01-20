@@ -1,7 +1,23 @@
 @use './app/shared/colors.scss' as colors;
 
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    src: url('./../public/assets/fonts/Roboto-VariableFont_wdth_wght.ttf');
+}
+
+@font-face {
+    font-family: 'Fascinate';
+    src: url('./../public/assets/fonts/Fascinate-Regular.ttf');
+}
+
 body {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     @include colors.bg-grey;
     @include colors.font-eggshell;
+}
+
+.main-container {
+    height: calc(100dvh - 80px);
 }
