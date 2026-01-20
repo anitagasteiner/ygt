@@ -15,20 +15,27 @@ ul {
     margin: 0;
     padding: 0;
     display: flex;
+    @include colors.bg-purple;
     justify-content: center;
     align-items: center;
     >li {
         flex: 1;
-        padding: 5px;
         display: inline-block;
         text-align: center;
-        font-size: 14px;
-        @include colors.bg-purple;
         &:hover {
             cursor: pointer;
         }
-        >img {
-            height: 45px;
-        }
     }
+}
+
+.nav-link {
+    padding: 5px;    
+    font-size: 14px;
+    >img {
+        height: 45px;
+    }
+}
+
+.nav-link-small {
+    font-size: 12px !important;
 }
