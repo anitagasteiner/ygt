@@ -1,11 +1,14 @@
+@use './../../colors.scss' as colors;
+
 nav {
-    width: 10px;
+    @include colors.bg-purple;
 }
 
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    @include colors.bg-purple;
     >li {
         padding: 5px;
         &:hover {

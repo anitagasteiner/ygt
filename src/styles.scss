@@ -1,4 +1,6 @@
+@use './app/shared/colors.scss' as colors;
+
 *{
     margin: 0;
-    background-color: #5a6370;
+    @include colors.bg-grey;
 }

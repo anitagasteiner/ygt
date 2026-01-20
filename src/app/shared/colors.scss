@@ -7,3 +7,13 @@ $colors: (
     "grey": #5a6370,
     "purple": #4f284b
 );
+
+@mixin bg-grey {
+    $bg-color: map.get($colors, "grey");
+    background-color: $bg-color;
+}
+
+@mixin bg-purple {
+    $bg-color: map.get($colors, "purple");
+    background-color: $bg-color !important;
+}
