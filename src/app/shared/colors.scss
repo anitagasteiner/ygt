@@ -5,7 +5,8 @@ $colors: (
     "yellow": #ebbc3d,
     "green": #678d68,
     "grey": #5a6370,
-    "purple": #4f284b
+    "purple": #4f284b,
+    "eggshell": #ffffcc
 );
 
 @mixin bg-grey {
@@ -15,5 +16,10 @@ $colors: (
 
 @mixin bg-purple {
     $bg-color: map.get($colors, "purple");
-    background-color: $bg-color !important;
+    background-color: $bg-color;
+}
+
+@mixin font-eggshell {
+    $color: map.get($colors, "eggshell");
+    color: $color;
 }

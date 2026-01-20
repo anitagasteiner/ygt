@@ -1,6 +1,7 @@
 @use './app/shared/colors.scss' as colors;
 
-*{
+body {
     margin: 0;
     @include colors.bg-grey;
+    @include colors.font-eggshell;
 }
