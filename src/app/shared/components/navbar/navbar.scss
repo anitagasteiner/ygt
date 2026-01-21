@@ -2,11 +2,12 @@
 
 nav {
     width: 100dvw;
-    height: 100px;
+    height: 148px;
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
+    @include colors.bg-purple;
 }
 
 ul {
@@ -50,6 +51,7 @@ img {
 
 .sub-nav {
     gap: 16px;
+    height: 16px;
     >li {
         font-size: 12px !important;
         &:hover {
