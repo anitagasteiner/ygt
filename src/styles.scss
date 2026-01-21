@@ -13,6 +13,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    font-size: 14px;
     margin: 0;
     @include colors.bg-grey;
     @include colors.font-eggshell;
@@ -28,4 +29,8 @@ h1, h2 {
     font-family: 'Fascinate', sans-serif;
     margin: 0;
     padding: 10px;
+}
+
+h2 {
+    padding-bottom: 32px;
 }
