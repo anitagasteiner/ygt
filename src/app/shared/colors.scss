@@ -23,3 +23,13 @@ $colors: (
     $color: map.get($colors, "eggshell");
     color: $color;
 }
+
+@mixin font-grey {
+    $color: map.get($colors, "grey");
+    color: $color;
+}
+
+@mixin border-eggshell {
+    $color: map.get($colors, "eggshell");
+    border: 2px solid $color;
+}
