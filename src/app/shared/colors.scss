@@ -14,8 +14,8 @@ $colors: (
     background-color: $bg-color;
 }
 
-@mixin bg-purple {
-    $bg-color: map.get($colors, "purple");
+@mixin bg-green {
+    $bg-color: map.get($colors, "green");
     background-color: $bg-color;
 }
 
