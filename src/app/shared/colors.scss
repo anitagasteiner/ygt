@@ -19,6 +19,21 @@ $colors: (
     background-color: $bg-color;
 }
 
+@mixin bg-yellow {
+    $bg-color: map.get($colors, "yellow");
+    background-color: $bg-color;
+}
+
+@mixin bg-purple {
+    $bg-color: map.get($colors, "purple");
+    background-color: $bg-color;
+}
+
+@mixin bg-red {
+    $bg-color: map.get($colors, "red");
+    background-color: $bg-color;
+}
+
 @mixin font-eggshell {
     $color: map.get($colors, "eggshell");
     color: $color;
