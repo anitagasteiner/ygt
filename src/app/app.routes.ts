@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { Landingpage } from './components/landingpage/landingpage';
-import { Board } from './components/board/board';
-import { HealthInsurances } from './components/health-insurances/health-insurances';
-import { RunningCosts } from './components/running-costs/running-costs';
+import { Landingpage } from './components/landingpage/landingpage.component';
+import { Board } from './components/board/board.component';
+import { HealthInsurances } from './components/health-insurances/health-insurances.component';
+import { RunningCosts } from './components/running-costs/running-costs.component';
 
 export const routes: Routes = [
     { path: '', component: Landingpage },

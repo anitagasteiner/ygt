@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Navbar } from './shared/components/navbar/navbar';
+import { Navbar } from './shared/components/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +8,8 @@ import { Navbar } from './shared/components/navbar/navbar';
     RouterOutlet,
     Navbar
   ],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
 })
 export class App {
   protected readonly title = signal('ygt');

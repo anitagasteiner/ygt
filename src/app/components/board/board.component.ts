@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-board',
   imports: [],
-  templateUrl: './board.html',
-  styleUrl: './board.scss',
+  templateUrl: './board.component.html',
+  styleUrl: './board.component.scss',
 })
 export class Board {
 

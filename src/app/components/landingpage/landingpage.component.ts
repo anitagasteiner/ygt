@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-landingpage',
   imports: [],
-  templateUrl: './landingpage.html',
-  styleUrl: './landingpage.scss',
+  templateUrl: './landingpage.component.html',
+  styleUrl: './landingpage.component.scss',
 })
 export class Landingpage {
 
