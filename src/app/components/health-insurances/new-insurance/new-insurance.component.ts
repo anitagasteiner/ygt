@@ -55,11 +55,11 @@ export class NewInsuranceComponent {
   };
 
   /**
-   * Collects and stores form data into the XXXX invoice model. XXXXX
+   * Collects and stores form data into the new invoice model.
    */
   getNewInvoiceData(): void {
     this.newInvoice.type = this.selectedType;
-
+    this.newInvoice.patient = this.patientControl.value ?? '';
   }
 
   convertInvoiceFormInputToInvoice(invoiceFormInput: InvoiceFormInput): Invoice {
