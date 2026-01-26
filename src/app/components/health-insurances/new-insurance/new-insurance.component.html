@@ -7,11 +7,11 @@
 
     <fieldset>
         <label>
-            <input type="radio" name="type" value="invoice">
+            <input type="radio" name="type" value="invoice" (change)="selectedType = 'invoice'">
             <span>Invoice</span>
         </label>
         <label>
-            <input type="radio" name="type" value="receipt">
+            <input type="radio" name="type" value="receipt" (change)="selectedType = 'receipt'">
             <span>Receipt</span>
         </label>
         <legend>Type</legend>
@@ -28,6 +28,7 @@
                 </option>
             }
         </select>
+        <legend>Patient</legend>
     </fieldset>
 
     <input type="submit" value="Add Invoice">
