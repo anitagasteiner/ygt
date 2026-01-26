@@ -1,24 +1,33 @@
-<form (ngSubmit)="onSubmit(addInvoiceForm)" #addInvoiceForm="ngForm">
+<form [formGroup]="addInvoiceForm" (ngSubmit)="onSubmit()">
 
-    <!-- <fieldset>
-        <input #date="ngModel" [(ngModel)]="newInvoice.date" placeholder="dd/mm/yyyy" onfocus="this.placeholder=''" type="date" name="date" id="date" required>
+    <!-- Date -->
+    <fieldset>
+        <input type="date" id="date" formControlName="date">
         <legend>Date</legend>
-    </fieldset> -->
+        @if (addInvoiceForm.get('date')?.invalid && addInvoiceForm.get('date')?.touched) {
+            <div>Date is required.</div>
+        }
+    </fieldset>
 
+    <!-- Type -->
     <fieldset>
         <label>
-            <input type="radio" name="type" value="invoice" (change)="selectedType = 'invoice'">
+            <input type="radio" formControlName="type" value="invoice" (change)="selectedType = 'invoice'">
             <span>Invoice</span>
         </label>
         <label>
-            <input type="radio" name="type" value="receipt" (change)="selectedType = 'receipt'">
+            <input type="radio" formControlName="type" value="receipt" (change)="selectedType = 'receipt'">
             <span>Receipt</span>
         </label>
         <legend>Type</legend>
+        <!-- @if (addInvoiceForm.get('type')?.invalid && addInvoiceForm.get('type')?.touched) {
+            <div>Type is required.</div>
+        } -->
     </fieldset>
 
+    <!-- Patient -->
     <fieldset>
-        <select [formControl]="patientControl" required>
+        <select formControlName="patient">
             <option [ngValue]="null" disabled>
                 Select Patient
             </option>
@@ -29,8 +38,11 @@
             }
         </select>
         <legend>Patient</legend>
+        @if (addInvoiceForm.get('patient')?.invalid && addInvoiceForm.get('patient')?.touched) {
+            <div>Patient is required.</div>
+        }
     </fieldset>
 
-    <input type="submit" value="Add Invoice">
+    <button type="submit" [disabled]="addInvoiceForm.invalid">Save Invoice</button>
 
 </form>
