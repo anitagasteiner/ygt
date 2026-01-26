@@ -18,12 +18,16 @@
     </fieldset>
 
     <fieldset>
-        <div>
-            <div>Select Patient</div>
-            <div>
-                <img>
-            </div>
-        </div>
+        <select [formControl]="patientControl" required>
+            <option [ngValue]="null" disabled>
+                Select Patient
+            </option>
+            @for (patient of patients; track patient) {
+                <option [ngValue]="patient">
+                    {{ patient }}
+                </option>
+            }
+        </select>
     </fieldset>
 
     <input type="submit" value="Add Invoice">

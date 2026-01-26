@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, FormsModule, NgForm } from '@angular/forms';
 import { InvoiceFormInput } from '../../../models/invoice-form-input.model';
 import { DataBaseService } from '../../../services/data-base.service';
 import { Invoice } from '../../../models/invoice.model';
@@ -9,7 +9,8 @@ import { Invoice } from '../../../models/invoice.model';
   selector: 'app-new-insurance',
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   templateUrl: './new-insurance.component.html',
   styleUrl: './new-insurance.component.scss',
@@ -21,6 +22,21 @@ export class NewInsuranceComponent {
    * @type {DataBaseService}
    */
   dataBaseService: DataBaseService = inject(DataBaseService);
+
+  /**
+   * Available patients to choose from.
+   * @type {string[]}
+   */
+  patients: string[] = ['Anita', 'Elmar', 'Frida', 'Nina'];
+
+  /**
+   * Reactive form control for the selected patient.
+   * Holds the currently selected patient name or null if no selection was made.
+   * @type {FormControl<string | null>}
+   */
+  patientControl: FormControl<string | null> = new FormControl<string | null>(null, {
+    nonNullable: false
+  });
 
   /**
    * The new invoice that is being created.
