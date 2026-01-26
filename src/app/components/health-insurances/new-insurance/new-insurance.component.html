@@ -1,0 +1,29 @@
+<form>
+
+    <fieldset>
+        <input #date="ngModel" [(ngModel)]="" placeholder="dd/mm/yyyy" onfocus="this.placeholder=''" type="date" name="date" id="date" required>
+        <legend>Date</legend>
+    </fieldset>
+
+    <fieldset>
+        <label>
+            <input type="radio" name="type" value="invoice">
+            <span>Invoice</span>
+        </label>
+        <label>
+            <input type="radio" name="type" value="receipt">
+            <span>Receipt</span>
+        </label>
+        <legend>Type</legend>
+    </fieldset>
+
+    <fieldset>
+        <div>
+            <div>Select Patient</div>
+            <div>
+                <img>
+            </div>
+        </div>
+    </fieldset>
+
+</form>
