@@ -10,6 +10,7 @@
     padding: 0 12px 12px 12px;
     justify-content: center;
     hyphens: auto;
+    display: none; // TODO: delete after having finished new insurance form!
     >div {
         @include colors.border-eggshell;
         border-radius: 10px;

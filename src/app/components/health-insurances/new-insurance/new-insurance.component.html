@@ -1,9 +1,9 @@
-<form>
+<form (ngSubmit)="onSubmit(addInvoiceForm)" #addInvoiceForm="ngForm">
 
-    <fieldset>
-        <input #date="ngModel" [(ngModel)]="" placeholder="dd/mm/yyyy" onfocus="this.placeholder=''" type="date" name="date" id="date" required>
+    <!-- <fieldset>
+        <input #date="ngModel" [(ngModel)]="newInvoice.date" placeholder="dd/mm/yyyy" onfocus="this.placeholder=''" type="date" name="date" id="date" required>
         <legend>Date</legend>
-    </fieldset>
+    </fieldset> -->
 
     <fieldset>
         <label>
@@ -25,5 +25,7 @@
             </div>
         </div>
     </fieldset>
+
+    <input type="submit" value="Add Invoice">
 
 </form>

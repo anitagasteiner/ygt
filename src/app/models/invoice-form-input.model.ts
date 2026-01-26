@@ -1,6 +1,5 @@
 export interface InvoiceFormInput {
-    id: string;
     type: string;
-    date: String;
+    //date: String;
     patient: string;
 }
