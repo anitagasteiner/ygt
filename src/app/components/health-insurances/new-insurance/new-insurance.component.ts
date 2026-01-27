@@ -23,14 +23,30 @@ export class NewInsuranceComponent {
 
   addInvoiceForm: FormGroup;
 
+  /**
+   * Currently selected type.
+   * @type {string}
+   */
+  selectedType: string = '';
+
+  /**
+   * Available patients to choose from.
+   * @type {string[]}
+   */
+  patients: string[] = ['Anita', 'Elmar', 'Frida', 'Nina'];
+
   constructor(private fb: FormBuilder) {
     this.addInvoiceForm = this.fb.group({
       date: ['', Validators.required],
       type: ['', Validators.required],
       patient: ['', Validators.required]
-    })
+    });
   }
 
+  /**
+   * Handles form submission.
+   * XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx
+   */
   onSubmit(): void {
     if (this.addInvoiceForm.valid) {
       console.log('Form Data: ', this.addInvoiceForm.value);
@@ -64,17 +80,7 @@ export class NewInsuranceComponent {
   //   nonNullable: false
   // });
 
-  /**
-   * Currently selected type.
-   * @type {string}
-   */
-  selectedType: string = '';
 
-  /**
-   * Available patients to choose from.
-   * @type {string[]}
-   */
-  patients: string[] = ['Anita', 'Elmar', 'Frida', 'Nina'];
 
   // /**
   //  * Reactive form control for the selected patient.

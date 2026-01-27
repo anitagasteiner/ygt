@@ -27,7 +27,7 @@
 
     <!-- Patient -->
     <fieldset>
-        <select formControlName="patient">
+        <select id ="patient" formControlName="patient">
             <option [ngValue]="null" disabled>
                 Select Patient
             </option>
@@ -43,6 +43,7 @@
         }
     </fieldset>
 
+    <!-- Submit Button -->
     <button type="submit" [disabled]="addInvoiceForm.invalid">Save Invoice</button>
 
 </form>
