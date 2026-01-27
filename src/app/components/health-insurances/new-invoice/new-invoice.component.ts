@@ -4,14 +4,14 @@ import { DataBaseService } from '../../../services/data-base.service';
 import { Invoice } from '../../../models/invoice.model';
 
 @Component({
-  selector: 'app-new-insurance',
+  selector: 'app-new-invoice',
   imports: [
     ReactiveFormsModule
   ],
-  templateUrl: './new-insurance.component.html',
-  styleUrl: './new-insurance.component.scss',
+  templateUrl: './new-invoice.component.html',
+  styleUrl: './new-invoice.component.scss',
 })
-export class NewInsuranceComponent {
+export class NewInvoiceComponent {
 
   /**
    * Instance of DataBaseService to access the Firebase Database.

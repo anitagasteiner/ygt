@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NewInsuranceComponent } from './new-insurance/new-insurance.component';
+import { NewInvoiceComponent } from './new-invoice/new-invoice.component';
 
 @Component({
   selector: 'app-health-insurances',
   imports: [
-    NewInsuranceComponent
+    NewInvoiceComponent
   ],
   templateUrl: './health-insurances.component.html',
   styleUrl: './health-insurances.component.scss',
