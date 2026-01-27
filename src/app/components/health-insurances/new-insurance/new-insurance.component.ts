@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-//import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { DataBaseService } from '../../../services/data-base.service';
 import { Invoice } from '../../../models/invoice.model';
@@ -7,7 +6,6 @@ import { Invoice } from '../../../models/invoice.model';
 @Component({
   selector: 'app-new-insurance',
   imports: [
-    //CommonModule,
     ReactiveFormsModule
   ],
   templateUrl: './new-insurance.component.html',
@@ -36,7 +34,7 @@ export class NewInsuranceComponent {
   patients: string[] = ['Anita', 'Elmar', 'Frida', 'Nina'];
 
   constructor(private fb: FormBuilder) {
-    this.addInvoiceForm = this.fb.group({
+    this.addInvoiceForm = this.fb.nonNullable.group({
       date: ['', Validators.required],
       type: ['', Validators.required],
       patient: ['', Validators.required]
@@ -44,99 +42,24 @@ export class NewInsuranceComponent {
   }
 
   /**
-   * Handles form submission.
-   * XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx
+   * Submits the add invoice form and persists the data to the Firebase Database.
+   * Validates the form state before submission.
+   * If the form is invalid, all controls are marked as touched and the submission is aborted.
+   * On successful validation, the form values are mapped to an {@link Invoice} object and stored in the 'invoices' collection via the {@link DataBaseService}.
+   * @returns {Promise<void>} Resolves when the invoice has been successfully stored. Rejects if an error occurs.
    */
-  onSubmit(): void {
-    if (this.addInvoiceForm.valid) {
-      console.log('Form Data: ', this.addInvoiceForm.value);
-    }else {
-      console.log('Form is invalid.');
+  async onSubmit(): Promise<void> {
+    if (this.addInvoiceForm.invalid) {
+      this.addInvoiceForm.markAllAsTouched();
+      return;
+    }
+    const invoice: Invoice = this.addInvoiceForm.getRawValue();
+    try {
+      await this.dataBaseService.addData<Invoice>('invoices', invoice);
+      console.log('data saved: ', this.addInvoiceForm);
+    } catch (error: any) {
+      console.log('error: no data saved');
     }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // /**
-  //  * Reactive form control for the date.
-  //  * Holds an ISO date string (yyyy-mm-dd) or null.
-  //  * @type {FormControl<string | null>}
-  //  */
-  // dateControl: FormControl<string | null> = new FormControl<string | null>(null, {
-  //   nonNullable: false
-  // });
-
-
-
-  // /**
-  //  * Reactive form control for the selected patient.
-  //  * Holds the currently selected patient name or null if no selection was made.
-  //  * @type {FormControl<string | null>}
-  //  */
-  // patientControl: FormControl<string | null> = new FormControl<string | null>(null, {
-  //   nonNullable: false
-  // });
-
-  // /**
-  //  * The new invoice that is being created.
-  //  * @type {Invoice}
-  //  */
-  // newInvoice: Invoice = {
-  //   id: '',
-  //   type: '',
-  //   date: '',
-  //   patient: ''
-  // };
-
-  // addInvoiceForm = new FormGroup({
-  //   date: new FormControl<string | null>(null, Validators.required),
-  //   type: new FormControl<'invoice' | 'receipt' | null>(null, Validators.required),
-  //   patient: new FormControl<string | null>(null, Validators.required)
-  // });
-
-  // /**
-  //  * Collects and stores form data into the new invoice model.
-  //  */
-  // getNewInvoiceData(): void {
-  //   this.newInvoice.type = this.selectedType;
-  //   this.newInvoice.date = this.dateControl.value ?? '';
-  //   this.newInvoice.patient = this.patientControl.value ?? '';
-  // }
-
-  // /**
-  //  * Handles form submission.
-  //  * XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx
-  //  * @param form 
-  //  * @returns 
-  //  */
-  // async onSubmit(): Promise<void> {
-  //   if (this.addInvoiceForm.invalid) {
-  //     return;
-  //   }
-  //   //this.getNewInvoiceData();
-  //   try {
-  //     await this.dataBaseService.addData<Invoice>('invoices', this.newInvoice);
-  //     console.log('data saved: ', this.newInvoice);
-  //   } catch (error: any) {
-  //     console.log('error');
-  //   }
-
-  // }
-
-
 
 }

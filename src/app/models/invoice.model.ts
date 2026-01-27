@@ -1,6 +1,5 @@
 export interface Invoice {
-    id: string;
-    type: string;
     date: string;
+    type: string;
     patient: string;
 }
