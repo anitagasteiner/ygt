@@ -1,6 +1,6 @@
 <div class="main-container">
 
-    <h2>Health Insurances</h2>
+    <h2>Health Insurances Board</h2>
 
     <div class="board">
         <div>
@@ -9,23 +9,23 @@
         </div>
         <div>
             <div>12</div>
-            <div>Submitted to Public Health Insurance</div>
+            <div>Submitted to <span title="Public Health Insurance">ÖGK</span></div>
         </div>
         <div>
             <div>12</div>
-            <div>Refunded by Public Health Insurance</div>
+            <div>Refunded by <span title="Public Health Insurance">ÖGK</span></div>
         </div>
         <div>
             <div>12</div>
-            <div>Submitted to Supplementary Health Insurance</div>
+            <div>Submitted to <span title="Supplementary Health Insurance">muki</span></div>
         </div>
         <div>
             <div>12</div>
-            <div>Refunded by Supplementary Health Insurance</div>
+            <div>Refunded by <span title="Supplementary Health Insurance">muki</span></div>
         </div>
     </div>
 
-    <button (click)="showNewInvoiceForm()">New Invoice/Receipt</button>
+    <button (click)="showNewInvoiceForm()"><b>+</b> New Invoice</button>
 
     @if (insurancesService.newInvoiceFormOpened) {
         <app-new-invoice></app-new-invoice>
