@@ -10,7 +10,6 @@
     padding: 0 12px 12px 12px;
     justify-content: center;
     hyphens: auto;
-    display: none; // TODO: delete after having finished new insurance form!
     >div {
         @include colors.border-eggshell;
         border-radius: 10px;
@@ -32,45 +31,5 @@
         &:last-child {
             @include colors.bg-red;
         }
-    }
-    
+    }    
 }
-
-
-
-
-// #imgContainer {
-//     display: grid;
-//     grid-template-columns: repeat(auto-fill, 180px);    
-//     grid-auto-rows: 150px;    
-//     grid-gap: 5px;
-//     box-sizing: border-box;
-//     padding: 0 30px 30px 30px;
-//     justify-content: center;
-// }
-
-// .imgBox img {
-//     height: 100%;
-//     width: 100%;
-//     object-fit: cover;
-//     cursor: pointer;
-// }
-
-// .imgBox img:hover {
-//     border-radius: 10px;
-//     opacity: 0.8;
-// }
-
-// #mainTextContent {
-//     max-width: 800px;
-//     display: block;
-//     text-align: center;
-//     margin-left: auto;
-//     margin-right: auto;
-//     border: 1px solid rgba(47, 79, 79);
-//     border-radius: 5px;
-//     padding: 20px;
-//     overflow-wrap: break-word;
-//     word-wrap: break-word;
-//     word-break: break-word;
-// }

@@ -1,49 +1,57 @@
-<form [formGroup]="addInvoiceForm" (ngSubmit)="onSubmit()">
+<div class="newInvoiceFormContainer">    
 
-    <!-- Date -->
-    <fieldset>
-        <input type="date" id="date" formControlName="date">
-        <legend>Date</legend>
-        @if (addInvoiceForm.get('date')?.invalid && addInvoiceForm.get('date')?.touched) {
-            <div>Date is required.</div>
-        }
-    </fieldset>
+    <form [formGroup]="addInvoiceForm" (ngSubmit)="onSubmit()">
 
-    <!-- Type -->
-    <fieldset>
-        <label>
-            <input type="radio" formControlName="type" value="invoice">
-            <span>Invoice</span>
-        </label>
-        <label>
-            <input type="radio" formControlName="type" value="receipt">
-            <span>Receipt</span>
-        </label>
-        <legend>Type</legend>
-        <!-- @if (addInvoiceForm.get('type')?.invalid && addInvoiceForm.get('type')?.touched) {
-            <div>Type is required.</div>
-        } -->
-    </fieldset>
+        <img (click)="hideNewInvoiceForm()" class="btn-close" src="assets/img/icon_close.png">
 
-    <!-- Patient -->
-    <fieldset>
-        <select id ="patient" formControlName="patient">
-            <option [ngValue]="null" disabled>
-                Select Patient
-            </option>
-            @for (patient of patients; track patient) {
-                <option [ngValue]="patient">
-                    {{ patient }}
-                </option>
+        <h2>New Invoice/Receipt</h2>
+
+        <!-- Date -->
+        <fieldset>
+            <input type="date" id="date" formControlName="date">
+            <legend>Date</legend>
+            @if (addInvoiceForm.get('date')?.invalid && addInvoiceForm.get('date')?.touched) {
+                <div>Date is required.</div>
             }
-        </select>
-        <legend>Patient</legend>
-        @if (addInvoiceForm.get('patient')?.invalid && addInvoiceForm.get('patient')?.touched) {
-            <div>Patient is required.</div>
-        }
-    </fieldset>
+        </fieldset>
 
-    <!-- Submit Button -->
-    <button type="submit" [disabled]="addInvoiceForm.invalid">Save Invoice</button>
+        <!-- Type -->
+        <fieldset>
+            <label>
+                <input type="radio" formControlName="type" value="invoice">
+                <span>Invoice</span>
+            </label>
+            <label>
+                <input type="radio" formControlName="type" value="receipt">
+                <span>Receipt</span>
+            </label>
+            <legend>Type</legend>
+            <!-- @if (addInvoiceForm.get('type')?.invalid && addInvoiceForm.get('type')?.touched) {
+                <div>Type is required.</div>
+            } -->
+        </fieldset>
 
-</form>
+        <!-- Patient -->
+        <fieldset>
+            <select id ="patient" formControlName="patient">
+                <option [ngValue]="null" disabled>
+                    Select Patient
+                </option>
+                @for (patient of patients; track patient) {
+                    <option [ngValue]="patient">
+                        {{ patient }}
+                    </option>
+                }
+            </select>
+            <legend>Patient</legend>
+            @if (addInvoiceForm.get('patient')?.invalid && addInvoiceForm.get('patient')?.touched) {
+                <div>Patient is required.</div>
+            }
+        </fieldset>
+
+        <!-- Submit Button -->
+        <button type="submit" [disabled]="addInvoiceForm.invalid">Save Invoice</button>
+
+    </form>
+
+</div>
