@@ -33,16 +33,18 @@
 
         <!-- Patient -->
         <fieldset>
-            <select id ="patient" formControlName="patient">
-                <option [ngValue]="null" disabled>
-                    Select Patient
-                </option>
-                @for (patient of patients; track patient) {
-                    <option [ngValue]="patient">
-                        {{ patient }}
+            <div class="select-customized">
+                <select id ="patient" formControlName="patient">
+                    <option [ngValue]="null" disabled>
+                        Select Patient
                     </option>
-                }
-            </select>
+                    @for (patient of patients; track patient) {
+                        <option [ngValue]="patient">
+                            {{ patient }}
+                        </option>
+                    }
+                </select>
+            </div>       
             <legend>Patient</legend>
             @if (addInvoiceForm.get('patient')?.invalid && addInvoiceForm.get('patient')?.touched) {
                 <div>Patient is required.</div>

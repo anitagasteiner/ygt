@@ -35,6 +35,51 @@ h2 {
     padding-bottom: 32px;
 }
 
+fieldset {
+    @include colors.border-eggshell;
+    border-radius: 6px;
+}
+
+select {
+    appearance: none;
+    width: 100%;
+    @include colors.bg-green;
+    @include colors.border-eggshell;
+    border-radius: 6px;
+    font-size: 16px;
+    @include colors.font-eggshell;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.select-customized {
+    min-width: 350px;
+    position: relative;
+}
+
+.select-customized::before,
+.select-customized::after {
+    --size: 6px;
+    position: absolute;
+    content: "";
+    right: 8px;
+    pointer-events: none;
+}
+
+.select-customized::before {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: var(--size) solid rgba(255, 255, 204);
+    top: 35%;
+}
+
+.select-customized::after {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-top: var(--size) solid rgba(255, 255, 204);
+    top: 60%;
+}
+
 button {
     cursor: pointer;
     @include colors.bg-red;
