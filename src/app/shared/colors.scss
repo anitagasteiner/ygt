@@ -1,16 +1,22 @@
 @use "sass:map";
 
 $colors: (
-    "red": #bb4c3e,
-    "yellow": #ebbc3d,
-    "green": #678d68,
-    "grey": #5a6370,
-    "purple": #4f284b,
-    "eggshell": #ffffcc
+    "red": rgba(187, 76, 62),
+    "yellow": rgba(235, 188, 61),
+    "green": rgba(103, 141, 104),
+    "grey": rgba(90, 99, 112),
+    "grey-transparent": rgba(90, 99, 112, 0.8),
+    "purple": rgba(79, 40, 75),
+    "eggshell": rgba(255, 255, 204)
 );
 
 @mixin bg-grey {
     $bg-color: map.get($colors, "grey");
+    background-color: $bg-color;
+}
+
+@mixin bg-grey-transparent {
+    $bg-color: map.get($colors, "grey-transparent");
     background-color: $bg-color;
 }
 
