@@ -1,0 +1,24 @@
+@use './../../../shared/colors.scss' as colors;
+
+.newInvoiceFormContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 148px;
+    // padding-top: 40px;
+    @include colors.bg-grey-transparent;
+}
+
+form {
+    padding: 24px;
+    margin: 18px;
+    @include colors.bg-green;
+    @include colors.border-eggshell;
+    border-radius: 10px;
+}
+
+.btn-close {
+    position: absolute;
+    right: 48px;
+}
