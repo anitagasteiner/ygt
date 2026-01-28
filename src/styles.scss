@@ -38,6 +38,7 @@ h2 {
 fieldset {
     @include colors.border-eggshell;
     border-radius: 6px;
+    margin: 10px;
 }
 
 select {

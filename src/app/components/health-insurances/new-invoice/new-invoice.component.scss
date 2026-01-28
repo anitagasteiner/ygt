@@ -6,8 +6,10 @@
     right: 0;
     left: 0;
     bottom: 148px;
-    // padding-top: 40px;
     @include colors.bg-grey-transparent;
+    display: flex;
+    justify-content: center;
+    align-items: start;
 }
 
 form {
@@ -16,10 +18,12 @@ form {
     @include colors.bg-green;
     @include colors.border-eggshell;
     border-radius: 10px;
+    max-width: 500px;
+    position: relative;
 }
 
 .btn-close {
     position: absolute;
-    right: 36px;
-    top: 36px;
+    right: 24px;
+    top: 24px;
 }
