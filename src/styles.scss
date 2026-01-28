@@ -48,3 +48,12 @@ button {
         @include colors.bg-eggshell;
     }
 }
+
+.btn-close {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.6;
+    }
+}
