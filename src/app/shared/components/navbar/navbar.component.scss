@@ -51,10 +51,7 @@ img {
 .sub-nav {
     gap: 16px;
     height: 16px;
-    >li {
-        font-size: 12px !important;
-        &:hover {
-            @include colors.font-grey;
-        }
+    >li:hover {
+        @include colors.font-grey;
     }    
 }
