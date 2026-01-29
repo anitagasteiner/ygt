@@ -11,7 +11,7 @@
     justify-content: center;
     hyphens: auto;
     >div {
-        @include colors.border-eggshell;
+        // @include colors.border-eggshell;
         border-radius: 10px;
         padding: 5px;
         cursor: pointer;
@@ -30,6 +30,9 @@
         }
         &:last-child {
             @include colors.bg-red;
+        }
+        &:hover {
+            @include colors.bg-grey;
         }
     }    
 }

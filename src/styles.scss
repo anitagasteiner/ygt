@@ -20,7 +20,7 @@ body {
 }
 
 .main-container {
-    height: calc(100dvh - 148px);
+    height: calc(100dvh - 148px - 16px);
     padding-top: 24px;
     text-align: center;
 }
@@ -85,14 +85,15 @@ button {
     cursor: pointer;
     @include colors.bg-red;
     @include colors.font-eggshell;
-    @include colors.border-eggshell;
+    // @include colors.border-eggshell;
+    border: none;
     border-radius: 6px;
     padding: 8px 16px;
     font-size: 16px;
     &:hover {
-        @include colors.font-red;
-        @include colors.border-red;
-        @include colors.bg-eggshell;
+        // @include colors.font-red;
+        // @include colors.border-red;
+        @include colors.bg-grey;
     }
 }
 
@@ -103,4 +104,8 @@ button {
     &:hover {
         opacity: 0.6;
     }
+}
+
+.shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
