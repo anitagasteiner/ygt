@@ -1,18 +1,29 @@
 @use './../../colors.scss' as colors;
 
-nav {
+.shape-rounded {
     width: 100dvw;
-    // height: 148px;
-    height: calc(148px + 16px + 75px);
-    position: absolute;
+    height: 186px;
+    position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 0;
     @include colors.bg-green;
+    mask: radial-gradient(60% 70px at bottom, #0000 98%, #000);
+    clip-path: ellipse(80% 100% at bottom);
+    transform: translateY(5%);
+}
+
+nav {
+    width: 100dvw;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
 }
 
 ul {
-    @include colors.bg-green;
     list-style-type: none;
     display: flex;
     justify-content: center;
@@ -27,7 +38,6 @@ ul {
 .main-nav {
     gap: 6px;
     >li {
-        // flex: 1;
         flex-direction: column;
         text-align: center;
         justify-content: center;
@@ -58,26 +68,22 @@ img {
 
 .sub-nav {
     gap: 8px;
-    @include colors.bg-grey;
-    padding-bottom: 75px;
-    mask: radial-gradient(60% 70px at bottom, #0000 98%, #000);
-    clip-path: ellipse(80% 100% at bottom);
     >li {
-        padding: 5px 10px 0 10px;
+        padding: 5px 15px 0 15px;
+        height: 28px;
     }
     >li:first-child:hover {
         border-top-left-radius: 50%;
         border-bottom-right-radius: 50%;
-        box-shadow: -4px 4px 8px 4px rgba(103, 141, 104, 0.5);
+        @include colors.font-eggshell;
+        @include colors.bg-green;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     >li:last-child:hover {
         border-top-right-radius: 50%;
         border-bottom-left-radius: 50%;
-        box-shadow: 4px 4px 8px 4px rgba(103, 141, 104, 0.5);
+        @include colors.font-eggshell;
+        @include colors.bg-green;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
-}
-
-.shape-rounded {
-    padding-top: 16px;
-    clip-path: ellipse(80% 100% at bottom);
 }
