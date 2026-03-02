@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { NewInvoiceComponent } from './new-invoice/new-invoice.component';
+import { AddInvoiceComponent } from './add-invoice/add-invoice.component';
 import { InsurancesService } from '../../services/insurances.service';
 
 @Component({
   selector: 'app-health-insurances',
   imports: [
-    NewInvoiceComponent
+    AddInvoiceComponent
   ],
   templateUrl: './board.component.html',
   styleUrl: './board.component.scss',

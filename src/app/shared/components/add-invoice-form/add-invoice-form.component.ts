@@ -1,18 +1,18 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { DataBaseService } from '../../../services/data-base.service';
-import { Invoice } from '../../../models/invoice.model';
 import { InsurancesService } from '../../../services/insurances.service';
+import { Invoice } from '../../../models/invoice.model';
 
 @Component({
-  selector: 'app-new-invoice',
+  selector: 'app-add-invoice-form',
   imports: [
     ReactiveFormsModule
   ],
-  templateUrl: './new-invoice.component.html',
-  styleUrl: './new-invoice.component.scss',
+  templateUrl: './add-invoice-form.component.html',
+  styleUrl: './add-invoice-form.component.scss',
 })
-export class NewInvoiceComponent {
+export class AddInvoiceFormComponent {
 
   /**
    * Instance of DataBaseService to access the Firebase Database.
@@ -48,6 +48,7 @@ export class NewInvoiceComponent {
     });
   }
 
+
   /**
    * Submits the add invoice form and persists the data to the Firebase Database.
    * Validates the form state before submission.
@@ -69,10 +70,11 @@ export class NewInvoiceComponent {
     }
   }
 
+
   /**
-   * Hides the new invoice form.
+   * Hides the add invoice form.
    */
-  hideNewInvoiceForm() {
+  hideAddInvoiceForm() {
     this.insurancesService.newInvoiceFormOpened = false;
   }
 
