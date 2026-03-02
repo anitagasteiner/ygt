@@ -2,16 +2,16 @@
 
 form {
     padding: 24px;
-    margin: 18px;
     @include colors.bg-green;
     @include colors.border-eggshell;
     border-radius: 10px;
-    max-width: 500px;
+    width: 240px;
     position: relative;
 }
 
+
 .btn-close {
     position: absolute;
-    right: 24px;
-    top: 24px;
+    right: 16px;
+    top: 16px;
 }

@@ -11,7 +11,6 @@
     justify-content: center;
     hyphens: auto;
     >div {
-        // @include colors.border-eggshell;
         border-radius: 10px;
         padding: 5px;
         cursor: pointer;
@@ -42,9 +41,9 @@
     top: 0;
     right: 0;
     left: 0;
-    bottom: 148px;
+    bottom: 0;
+    padding-top: 18px;
     @include colors.bg-grey-transparent;
     display: flex;
     justify-content: center;
-    align-items: start;
 }
