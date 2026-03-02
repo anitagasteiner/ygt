@@ -1,6 +1,5 @@
 @use './../../shared/colors.scss' as colors;
 
-
 .board {
     display: grid;
     grid-template-columns: repeat(auto-fill, 132px);
@@ -36,7 +35,7 @@
     }    
 }
 
-.addInvoiceFormContainer {
+.addInvoiceFormBg {
     position: absolute;
     top: 0;
     right: 0;
@@ -46,4 +45,15 @@
     @include colors.bg-grey-transparent;
     display: flex;
     justify-content: center;
+}
+
+.addInvoiceFormContainer {
+    position: relative;
+}
+
+.btn-close {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    z-index: 1;
 }

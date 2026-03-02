@@ -25,11 +25,14 @@
         </div>
     </div>
 
-    <button class="shadow" (click)="showNewInvoiceForm()"><b>+</b> Add Invoice</button>
+    <button class="shadow" (click)="showAddInvoiceForm()"><b>+</b> Add Invoice</button>
 
     @if (insurancesService.newInvoiceFormOpened) {
-        <div class="addInvoiceFormContainer">    
-            <app-add-invoice-form></app-add-invoice-form>
+        <div class="addInvoiceFormBg">
+            <div class="addInvoiceFormContainer">
+                <img (click)="hideAddInvoiceForm()" class="btn-close" src="assets/img/icon_close.png">
+                <app-add-invoice-form></app-add-invoice-form>
+            </div>            
         </div>
     }
 

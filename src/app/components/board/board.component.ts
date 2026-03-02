@@ -19,10 +19,17 @@ export class Board {
   insurancesService: InsurancesService = inject(InsurancesService);
 
   /**
-   * Shows the new invoice form.
+   * Shows the add invoice form.
    */
-  showNewInvoiceForm(): void {
+  showAddInvoiceForm(): void {
     this.insurancesService.newInvoiceFormOpened = true;
+  }
+
+  /**
+   * Hides the add invoice form.
+   */
+  hideAddInvoiceForm() {
+    this.insurancesService.newInvoiceFormOpened = false;
   }
 
 }

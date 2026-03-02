@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { DataBaseService } from '../../../services/data-base.service';
-import { InsurancesService } from '../../../services/insurances.service';
 import { Invoice } from '../../../models/invoice.model';
 
 @Component({
@@ -19,12 +18,6 @@ export class AddInvoiceFormComponent {
    * @type {DataBaseService}
    */
   dataBaseService: DataBaseService = inject(DataBaseService);
-
-  /**
-   * Instance of InsurancesService to manage insurances operations.
-   * @type {InsurancesService}
-   */
-  insurancesService: InsurancesService = inject(InsurancesService);
 
   addInvoiceForm: FormGroup;
 
@@ -68,14 +61,6 @@ export class AddInvoiceFormComponent {
     } catch (error: any) {
       console.log('error: no data saved');
     }
-  }
-
-
-  /**
-   * Hides the add invoice form.
-   */
-  hideAddInvoiceForm() {
-    this.insurancesService.newInvoiceFormOpened = false;
   }
 
 }
