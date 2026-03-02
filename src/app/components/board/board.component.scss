@@ -66,4 +66,14 @@
 
 .btn-close {
     padding-right: 16px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+    &:hover {
+        opacity: 0.4;
+        // transform: rotate(360deg);
+        // transform: skewY(-20deg);
+        transform: scale(1.3);
+    }
 }
