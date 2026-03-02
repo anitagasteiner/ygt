@@ -28,7 +28,9 @@
     <button class="shadow" (click)="showNewInvoiceForm()"><b>+</b> Add Invoice</button>
 
     @if (insurancesService.newInvoiceFormOpened) {
-        <app-add-invoice></app-add-invoice>
+        <div class="addInvoiceFormContainer">    
+            <app-add-invoice-form></app-add-invoice-form>
+        </div>
     }
 
 </div>
