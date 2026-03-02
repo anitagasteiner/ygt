@@ -30,7 +30,10 @@
     @if (insurancesService.newInvoiceFormOpened) {
         <div class="addInvoiceFormBg">
             <div class="addInvoiceFormContainer">
-                <img (click)="hideAddInvoiceForm()" class="btn-close" src="assets/img/icon_close.png">
+                <div class="addInvoiceFormHead">
+                    <h2>Add Invoice</h2>
+                    <img (click)="hideAddInvoiceForm()" class="btn-close" src="assets/img/icon_close.png">
+                </div>                
                 <app-add-invoice-form></app-add-invoice-form>
             </div>            
         </div>

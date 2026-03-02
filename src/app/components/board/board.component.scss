@@ -41,7 +41,6 @@
     right: 0;
     left: 0;
     bottom: 0;
-    padding-top: 18px;
     @include colors.bg-grey-transparent;
     display: flex;
     justify-content: center;
@@ -49,11 +48,22 @@
 
 .addInvoiceFormContainer {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 86px;
+    
+}
+
+.addInvoiceFormHead {
+    position: absolute;
+    top: 42px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    @include colors.bg-shadow-grey;
 }
 
 .btn-close {
-    position: absolute;
-    right: 16px;
-    top: 16px;
-    z-index: 1;
+    padding-right: 16px;
 }

@@ -5,10 +5,16 @@ $colors: (
     "yellow": rgba(235, 188, 61),
     "green": rgba(103, 141, 104),
     "grey": rgba(90, 99, 112),
-    "grey-transparent": rgba(90, 99, 112, 0.8),
+    "grey-transparent": rgba(90, 99, 112, 0.9),
     "purple": rgba(79, 40, 75),
     "eggshell": rgba(255, 255, 204)
 );
+
+@mixin bg-shadow-grey {
+    $color: map.get($colors, "grey");
+    background-color: $color;
+    box-shadow: 0 0 15px 15px $color;
+}
 
 @mixin bg-grey {
     $bg-color: map.get($colors, "grey");
