@@ -1,11 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { NewInvoiceComponent } from './new-invoice/new-invoice.component';
+import { InsurancesService } from '../../services/insurances.service';
 
 @Component({
-  selector: 'app-board',
-  imports: [],
+  selector: 'app-health-insurances',
+  imports: [
+    NewInvoiceComponent
+  ],
   templateUrl: './board.component.html',
   styleUrl: './board.component.scss',
 })
 export class Board {
+
+  /**
+   * Instance of InsurancesService to manage insurances operations.
+   * @type {InsurancesService}
+   */
+  insurancesService: InsurancesService = inject(InsurancesService);
+
+  /**
+   * Shows the new invoice form.
+   */
+  showNewInvoiceForm(): void {
+    this.insurancesService.newInvoiceFormOpened = true;
+  }
 
 }

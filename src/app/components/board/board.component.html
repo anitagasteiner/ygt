@@ -1,5 +1,34 @@
 <div class="main-container">
 
-    <h2>Board</h2>
+    <h2>Progress Board</h2>
+
+    <div class="board">
+        <div class="shadow">
+            <div>123</div>
+            <div>Invoices Received</div>            
+        </div>
+        <div class="shadow">
+            <div>12</div>
+            <div>Submitted to <span title="Public Health Insurance">ÖGK</span></div>
+        </div>
+        <div class="shadow">
+            <div>12</div>
+            <div>Refunded by <span title="Public Health Insurance">ÖGK</span></div>
+        </div>
+        <div class="shadow">
+            <div>12</div>
+            <div>Submitted to <span title="Supplementary Health Insurance">muki</span></div>
+        </div>
+        <div class="shadow">
+            <div>12</div>
+            <div>Refunded by <span title="Supplementary Health Insurance">muki</span></div>
+        </div>
+    </div>
+
+    <button class="shadow" (click)="showNewInvoiceForm()"><b>+</b> New Invoice</button>
+
+    @if (insurancesService.newInvoiceFormOpened) {
+        <app-new-invoice></app-new-invoice>
+    }
 
 </div>
