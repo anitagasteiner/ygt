@@ -48,7 +48,7 @@ ul {
         border-bottom-right-radius: 50%;
         display: inline-block;
         >div {
-            margin-top: 5px;
+            margin-top: 2px;
         }
         &:hover {
             @include colors.bg-grey;
