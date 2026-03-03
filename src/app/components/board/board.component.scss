@@ -23,11 +23,11 @@
             font-size: 36px;
             font-weight: 600;
         }
-        &:nth-child(3n+1) {
+        &:nth-child(2), &:nth-child(3) {
             @include colors.bg-purple;
         }
         &:last-child {
-            @include colors.bg-red;
+            @include colors.bg-green;
         }
         &:hover {
             @include colors.bg-grey;

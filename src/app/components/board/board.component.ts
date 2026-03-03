@@ -1,11 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { AddInvoiceFormComponent } from './../../shared/components/add-invoice-form/add-invoice-form.component';
 import { InsurancesService } from '../../services/insurances.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-health-insurances',
   imports: [
-    AddInvoiceFormComponent
+    AddInvoiceFormComponent,
+    RouterLink
     ],
   templateUrl: './board.component.html',
   styleUrl: './board.component.scss',
