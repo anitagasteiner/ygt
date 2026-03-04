@@ -3,8 +3,8 @@
     <h2>Progress Board</h2>
 
     <div class="board">
-        <div class="shadow">
-            <div>123</div>
+        <div class="shadow" routerLink="/invoices">
+            <div>{{ invoicesCount$ | async }}</div>
             <div>Invoices Received</div>            
         </div>
         <div class="shadow">
@@ -20,13 +20,14 @@
             <div>Submitted to <span title="Supplementary Health Insurance">muki</span></div>
         </div>
         <div class="shadow">
+            <div>4</div>
+            <div>Requests<br>by <span title="Supplementary Health Insurance">muki</span></div>
+        </div>
+        <div class="shadow">
             <div>12</div>
             <div>Refunded by <span title="Supplementary Health Insurance">muki</span></div>
         </div>
-        <div class="shadow" routerLink="/invoices">
-            <div>{{ invoicesCount$ | async }}</div>
-            <div>Invoices</div>
-        </div>
+        
     </div>
 
     <!-- @if (unsortedInvoices$ | async; as unsortedInvoices) {
