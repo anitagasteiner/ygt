@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class InsurancesService {
+export class InvoicesService {
 
   /**
    * Boolean flag indicating if the new invoice form is opened.
