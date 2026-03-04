@@ -29,9 +29,15 @@
         </div>
     </div>
 
+    @if (unsortedInvoices$ | async; as unsortedInvoices) {
+        @for (unsortedInvoice of unsortedInvoices$ | async; track unsortedInvoice.date; let index = $index) {
+            <div>{{ unsortedInvoice.date }}</div>
+        }
+    }
+
     <button class="shadow" (click)="showAddInvoiceForm()"><b>+</b> Add Invoice</button>
 
-    @if (insurancesService.newInvoiceFormOpened) {
+    @if (invoicesService.newInvoiceFormOpened) {
         <div class="addInvoiceFormBg">
             <div class="addInvoiceFormContainer">
                 <div class="addInvoiceFormHead">

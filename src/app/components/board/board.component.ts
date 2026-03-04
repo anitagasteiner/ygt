@@ -1,11 +1,17 @@
 import { Component, inject } from '@angular/core';
-import { AddInvoiceFormComponent } from './../../shared/components/add-invoice-form/add-invoice-form.component';
-import { InsurancesService } from '../../services/insurances.service';
 import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
+import { AddInvoiceFormComponent } from './../../shared/components/add-invoice-form/add-invoice-form.component';
+import { InvoicesService } from '../../services/invoices.service';
+import { DataBaseService } from '../../services/data-base.service';
+import { Invoice } from '../../models/invoice.model';
+
 
 @Component({
-  selector: 'app-health-insurances',
+  selector: 'app-board',
   imports: [
+    CommonModule,
     AddInvoiceFormComponent,
     RouterLink
     ],
@@ -15,23 +21,47 @@ import { RouterLink } from '@angular/router';
 export class Board {
 
   /**
-   * Instance of InsurancesService to manage insurances operations.
-   * @type {InsurancesService}
+   * Instance of DataBaseService used to access the Firebase Database.
+   * @type {DataBaseService}
    */
-  insurancesService: InsurancesService = inject(InsurancesService);
+  dataBaseService: DataBaseService = inject(DataBaseService);
+
+
+  /**
+   * Instance of InvoicesService to manage invoices operations.
+   * @type {InvoicesService}
+   */
+  invoicesService: InvoicesService = inject(InvoicesService);
+
+
+  /**
+   * Observalbe stream of all invoices.
+   * @type {Observable<Invoice[]>}
+   */
+  unsortedInvoices$: Observable<Invoice[]>;
+
+
+  /**
+   * Initializes the board component. Loads the invoices data.
+   */
+  constructor() {
+    this.unsortedInvoices$ = this.dataBaseService.getData<Invoice>('invoices');
+  }
+
 
   /**
    * Shows the add invoice form.
    */
   showAddInvoiceForm(): void {
-    this.insurancesService.newInvoiceFormOpened = true;
+    this.invoicesService.newInvoiceFormOpened = true;
   }
+
 
   /**
    * Hides the add invoice form.
    */
   hideAddInvoiceForm() {
-    this.insurancesService.newInvoiceFormOpened = false;
+    this.invoicesService.newInvoiceFormOpened = false;
   }
 
 }
