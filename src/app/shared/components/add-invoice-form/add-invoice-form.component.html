@@ -45,6 +45,26 @@
         }
     </fieldset>
 
+    <!-- Status -->
+    <fieldset>
+        <div class="select-customized">
+            <select id ="status" formControlName="status">
+                <option [ngValue]="null" disabled>
+                    Select Status
+                </option>
+                @for (status of statuses; track status) {
+                    <option [ngValue]="status">
+                        {{ status }}
+                    </option>
+                }
+            </select>
+        </div>       
+        <legend>Status</legend>
+        @if (addInvoiceForm.get('status')?.invalid && addInvoiceForm.get('status')?.touched) {
+            <div>Status is required.</div>
+        }
+    </fieldset>
+
     <!-- Submit Button -->
     <button type="submit" [disabled]="addInvoiceForm.invalid">Save Invoice</button>
 

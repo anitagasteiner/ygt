@@ -33,11 +33,20 @@ export class AddInvoiceFormComponent {
    */
   patients: string[] = ['Anita', 'Elmar', 'Frida', 'Nina'];
 
+
+  /**
+   * Available processing statuses to choose from.
+   * @type {string[]}
+   */
+  statuses: string[] = ['received', 'submitted to ÖGK', 'refunded by ÖGK', 'submitted to muki', 'request(s) by muki', 'refunded by muki'];
+
+
   constructor(private fb: FormBuilder) {
     this.addInvoiceForm = this.fb.nonNullable.group({
       date: ['', Validators.required],
       type: ['', Validators.required],
-      patient: ['', Validators.required]
+      patient: ['', Validators.required],
+      status: ['', Validators.required]
     });
   }
 
