@@ -41,6 +41,10 @@ export class AddInvoiceFormComponent {
   statuses: string[] = ['received', 'submitted to ÖGK', 'refunded by ÖGK', 'submitted to muki', 'request(s) by muki', 'refunded by muki'];
 
 
+  /**
+   * TODO
+   * @param fb 
+   */
   constructor(private fb: FormBuilder) {
     this.addInvoiceForm = this.fb.nonNullable.group({
       date: ['', Validators.required],

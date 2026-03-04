@@ -2,37 +2,42 @@
 
     <h2>Progress Board</h2>
 
+
     <div class="board">
-        <div class="shadow" routerLink="/invoices">
+        <div class="sum-badge">
             <div>{{ invoicesCount$ | async }}</div>
+            <div>Total<br><br>Sum</div>
+        </div>
+        <div class="tile shadow" routerLink="/invoices">
+            <div>{{ invoicesReceivedCount$ | async }}</div>
             <div>Invoices Received</div>            
         </div>
-        <div class="shadow">
-            <div>12</div>
+        <div class="tile shadow">
+            <div>{{ invoicesSubmPublCount$ | async }}</div>
             <div>Submitted to <span title="Public Health Insurance">ÖGK</span></div>
         </div>
-        <div class="shadow">
-            <div>12</div>
+        <div class="tile shadow">
+            <div>{{ invoicesRefPublCount$ | async }}</div>
             <div>Refunded by <span title="Public Health Insurance">ÖGK</span></div>
         </div>
-        <div class="shadow">
-            <div>12</div>
+        <div class="tile shadow">
+            <div>{{ invoicesSubmSupplCount$ | async }}</div>
             <div>Submitted to <span title="Supplementary Health Insurance">muki</span></div>
         </div>
-        <div class="shadow">
-            <div>4</div>
+        <div class="tile shadow">
+            <div>{{ invoicesRequSupplCount$ | async }}</div>
             <div>Requests<br>by <span title="Supplementary Health Insurance">muki</span></div>
         </div>
-        <div class="shadow">
-            <div>12</div>
+        <div class="tile shadow">
+            <div>{{ invoicesRefSupplCount$ | async }}</div>
             <div>Refunded by <span title="Supplementary Health Insurance">muki</span></div>
         </div>
         
     </div>
 
-    <!-- @if (unsortedInvoices$ | async; as unsortedInvoices) {
-        @for (unsortedInvoice of unsortedInvoices$ | async; track unsortedInvoice.id; let index = $index) {
-            <div>{{ unsortedInvoice.id }}</div>
+    <!-- @if (invoices$ | async; as invoices) {
+        @for (invoice of invoices$ | async; track invoice.id; let index = $index) {
+            <div>{{ invoice.id }}</div>
         }
     } -->
 

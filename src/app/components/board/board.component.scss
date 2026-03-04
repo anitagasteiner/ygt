@@ -9,31 +9,59 @@
     padding: 0 12px 12px 12px;
     justify-content: center;
     hyphens: auto;
-    >div {
-        border-radius: 10px;
-        padding: 5px;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 3px;
-        font-size: 16px;
-        @include colors.bg-yellow;
-        >div:first-child {
-            font-size: 36px;
-            font-weight: 600;
-        }
-        &:nth-child(2), &:nth-child(3) {
-            @include colors.bg-purple;
-        }
-        &:last-child {
-            @include colors.bg-green;
-        }
-        &:hover {
-            @include colors.bg-grey;
-        }
-    }    
+    position: relative;
 }
+
+.sum-badge {
+    @include colors.bg-grey;
+    border-radius: 50%;
+    height: 72px;
+    width: 72px;
+    position: absolute;
+    top: -24px;
+    left: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    >div:first-child {
+        @include colors.font-red;
+        font-size: 36px;
+        font-weight: 800;
+        z-index: 1;
+        position: absolute;
+        top: 18px;
+        left: 18px;
+    }
+    >div:last-child {
+        transform: rotate(15deg);
+        z-index: 2;
+    }
+}
+
+.tile {
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    font-size: 16px;
+    @include colors.bg-yellow;
+    >div:first-child {
+        font-size: 36px;
+        font-weight: 600;
+    }
+    &:nth-child(2), &:nth-child(3) {
+        @include colors.bg-purple;
+    }
+    &:last-child {
+        @include colors.bg-green;
+    }
+    &:hover {
+        @include colors.bg-grey;
+    }
+}    
 
 .addInvoiceFormBg {
     position: absolute;
