@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { AddInvoiceFormComponent } from './../../shared/components/add-invoice-form/add-invoice-form.component';
 import { InvoicesService } from '../../services/invoices.service';
 import { DataBaseService } from '../../services/data-base.service';
@@ -42,10 +42,24 @@ export class Board {
 
 
   /**
+   * Observable emitting the number of invoices.
+   * @type {Observable<number>}
+   */
+  invoicesCount$: Observable<number>;
+
+
+  /**
    * Initializes the board component. Loads the invoices data.
    */
   constructor() {
     this.unsortedInvoices$ = this.dataBaseService.getData<Invoice>('invoices');
+    this.invoicesCount$ = this.countInvoices();
+  }
+
+  countInvoices(): Observable<number> {
+    return this.unsortedInvoices$.pipe(
+      map(invoices => invoices.length)
+    );
   }
 
 

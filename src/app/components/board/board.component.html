@@ -24,16 +24,16 @@
             <div>Refunded by <span title="Supplementary Health Insurance">muki</span></div>
         </div>
         <div class="shadow" routerLink="/invoices">
-            <div>46</div>
-            <div>Show all<br>invoices</div>
+            <div>{{ invoicesCount$ | async }}</div>
+            <div>Invoices</div>
         </div>
     </div>
 
-    @if (unsortedInvoices$ | async; as unsortedInvoices) {
-        @for (unsortedInvoice of unsortedInvoices$ | async; track unsortedInvoice.date; let index = $index) {
-            <div>{{ unsortedInvoice.date }}</div>
+    <!-- @if (unsortedInvoices$ | async; as unsortedInvoices) {
+        @for (unsortedInvoice of unsortedInvoices$ | async; track unsortedInvoice.id; let index = $index) {
+            <div>{{ unsortedInvoice.id }}</div>
         }
-    }
+    } -->
 
     <button class="shadow" (click)="showAddInvoiceForm()"><b>+</b> Add Invoice</button>
 
