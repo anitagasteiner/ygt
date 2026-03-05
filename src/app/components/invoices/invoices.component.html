@@ -2,8 +2,23 @@
 
     <h2>Invoices</h2>
 
+    <table>
+        <tr>
+            <th>date</th>
+            <th>type</th>
+            <th>patient</th>
+            <th>status</th>
+        </tr>
+        <!-- @for () -->
+                    
+    </table>
+
     <app-invoice></app-invoice>
 
-    
+    <h2>Invoices Test:</h2>
+
+    @for(invoice of invoicesTest(); track invoice.id) {
+        <div>{{ invoice.patient }}</div>
+    }    
 
 </div>
