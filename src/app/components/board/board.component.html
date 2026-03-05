@@ -8,11 +8,11 @@
             <div>{{ invoicesCount$ | async }}</div>
             <div>Total<br><br>Sum</div>
         </div>
-        <div class="tile shadow bg-red" routerLink="/invoices" [queryParams]="{ type: 'received' }">
+        <div class="tile shadow bg-red" [routerLink]="['/invoices']" [queryParams]="{ status: 'received' }">
             <div>{{ invoicesReceivedCount$ | async }}</div>
             <div>Invoices Received</div>            
         </div>
-        <div class="tile shadow bg-purple">
+        <div class="tile shadow bg-purple" [routerLink]="['/invoices']" [queryParams]="{ status: 'submitted to ÖGK' }">
             <div>{{ invoicesSubmPublCount$ | async }}</div>
             <div>Submitted to <span title="Public Health Insurance">ÖGK</span></div>
         </div>
