@@ -8,15 +8,15 @@
             <div>{{ invoicesCount$ | async }}</div>
             <div>Total<br><br>Sum</div>
         </div>
-        <div class="tile shadow" routerLink="/invoices">
+        <div class="tile shadow bg-red" routerLink="/invoices">
             <div>{{ invoicesReceivedCount$ | async }}</div>
             <div>Invoices Received</div>            
         </div>
-        <div class="tile shadow">
+        <div class="tile shadow bg-purple">
             <div>{{ invoicesSubmPublCount$ | async }}</div>
             <div>Submitted to <span title="Public Health Insurance">ÖGK</span></div>
         </div>
-        <div class="tile shadow">
+        <div class="tile shadow bg-purple">
             <div>{{ invoicesRefPublCount$ | async }}</div>
             <div>Refunded by <span title="Public Health Insurance">ÖGK</span></div>
         </div>
@@ -28,7 +28,7 @@
             <div>{{ invoicesRequSupplCount$ | async }}</div>
             <div>Requests<br>by <span title="Supplementary Health Insurance">muki</span></div>
         </div>
-        <div class="tile shadow">
+        <div class="tile shadow bg-green">
             <div>{{ invoicesRefSupplCount$ | async }}</div>
             <div>Refunded by <span title="Supplementary Health Insurance">muki</span></div>
         </div>

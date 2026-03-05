@@ -23,6 +23,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     z-index: 1;
     >div:first-child {
         @include colors.font-red;
@@ -49,20 +50,26 @@
     gap: 3px;
     font-size: 16px;
     @include colors.bg-yellow;
+    &:hover {
+        @include colors.bg-grey;
+    }
     >div:first-child {
         font-size: 36px;
         font-weight: 600;
     }
-    &:nth-child(2), &:nth-child(3) {
-        @include colors.bg-purple;
-    }
-    &:last-child {
-        @include colors.bg-green;
-    }
-    &:hover {
-        @include colors.bg-grey;
-    }
-}    
+}
+
+.bg-red {
+    @include colors.bg-red;
+}
+
+.bg-purple {
+    @include colors.bg-purple;
+}
+
+.bg-green {
+    @include colors.bg-green;
+}
 
 .addInvoiceFormBg {
     position: absolute;
