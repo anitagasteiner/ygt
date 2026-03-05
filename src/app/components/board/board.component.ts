@@ -18,7 +18,7 @@ import { Invoice } from '../../models/invoice.model';
   templateUrl: './board.component.html',
   styleUrl: './board.component.scss',
 })
-export class Board {
+export class BoardComponent {
 
   /**
    * Instance of DataBaseService used to access the Firebase Database.

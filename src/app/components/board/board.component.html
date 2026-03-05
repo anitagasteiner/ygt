@@ -8,7 +8,7 @@
             <div>{{ invoicesCount$ | async }}</div>
             <div>Total<br><br>Sum</div>
         </div>
-        <div class="tile shadow bg-red" routerLink="/invoices">
+        <div class="tile shadow bg-red" routerLink="/invoices" [queryParams]="{ type: 'received' }">
             <div>{{ invoicesReceivedCount$ | async }}</div>
             <div>Invoices Received</div>            
         </div>

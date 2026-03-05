@@ -9,6 +9,6 @@ import { AddInvoiceFormComponent } from '../../shared/components/add-invoice-for
   templateUrl: './add-invoice.component.html',
   styleUrl: './add-invoice.component.scss',
 })
-export class AddInvoice {
+export class AddInvoiceComponent {
 
 }
